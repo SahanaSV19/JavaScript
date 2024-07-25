@@ -17,22 +17,7 @@
     <div>
         <button onclick="
             let userChoice='bat';
-            let computerChoice;
-            let randomNumber= Math.random()*3;
-            if (randomNumber>=0 && randomNumber<=1)
-            {   
-                computerChoice='bat';
-            }
-            else if(randomNumber>1 && randomNumber<=2)
-            {
-                computerChoice='ball';
-            }
-            else 
-            {
-                computerChoice='stump';
-            }
-
-
+            generateComputerChoice()
             let resultMsg;
             if (computerChoice=='ball') {
                 resultMsg = 'User Won.';
@@ -50,22 +35,7 @@
 
         <button onclick="
         userChoice='ball';
-        randomNumber= Math.random()*3;
-        if (randomNumber>=0 && randomNumber<=1)
-        {   
-            computerChoice='bat';
-        }
-        else if(randomNumber>1 && randomNumber<=2)
-        {
-            computerChoice='ball';
-        }
-        else 
-        {
-            computerChoice='stump';
-        }
-
-
-        
+        generateComputerChoice()
         if (computerChoice=='stump') {
             resultMsg = 'User Won.';
         }
@@ -82,22 +52,7 @@
 
         <button onclick="
         userChoice='stump';
-        randomNumber= Math.random()*3;
-        if (randomNumber>=0 && randomNumber<=1)
-        {   
-            computerChoice='bat';
-        }
-        else if(randomNumber>1 && randomNumber<=2)
-        {
-            computerChoice='ball';
-        }
-        else 
-        {
-            computerChoice='stump';
-        }
-
-
-        
+        generateComputerChoice()
         if (computerChoice=='bat') {
             resultMsg = 'User Won.';
         }
@@ -112,6 +67,23 @@
         alert(`You have chosen to stump and computer has chosen to ${computerChoice} and ${resultMsg}`);
         ">Stump</button>
     </div>
+
+    <script>
+        let computerChoice;
+        function generateComputerChoice() {
+            let randomNumber = Math.random() * 3;
+            if (randomNumber >= 0 && randomNumber <= 1) {
+                computerChoice = 'bat';
+            }
+            else if (randomNumber > 1 && randomNumber <= 2) {
+                computerChoice = 'ball';
+            }
+            else {
+                computerChoice = 'stump';
+            }
+
+        }
+    </script>
 </body>
 
 </html>
