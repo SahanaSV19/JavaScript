@@ -15,47 +15,44 @@
             <div class="keypad">
 
                 <button id="c-btn" onclick=" displayText='';
-                    document.querySelector('#display').value=displayText">C</button>
+                    displayFunction(displayText)">C</button>
                 <button id="1" onclick="displayText=displayText+'1';
-                document.querySelector('#display').value=displayText">1</button>
+                displayFunction(displayText)">1</button>
                 <button id="2" onclick="displayText=displayText+'2';
-                document.querySelector('#display').value=displayText">2</button>
+                displayFunction(displayText)">2</button>
                 <button id="add" onclick="displayText=displayText+'+';
-                document.querySelector('#display').value=displayText">+</button>
+                displayFunction(displayText)">+</button>
                 <button id="3" onclick="displayText=displayText+'3';
-                document.querySelector('#display').value=displayText">3</button>
+                displayFunction(displayText)">3</button>
                 <button id="4" onclick="displayText=displayText+'4';
-                document.querySelector('#display').value=displayText">4</button>
+                displayFunction(displayText)">4</button>
                 <button id="sub" onclick="displayText=displayText+'-';
-                document.querySelector('#display').value=displayText">-</button>
+                displayFunction(displayText)">-</button>
                 <button id="5" onclick="displayText=displayText+'5';
-                document.querySelector('#display').value=displayText">5</button>
+                displayFunction(displayText)">5</button>
                 <button id="6" onclick="displayText=displayText+'6';
-                document.querySelector('#display').value=displayText">6</button>
+                displayFunction(displayText)">6</button>
                 <button id="mul" onclick="displayText=displayText+'*';
-                document.querySelector('#display').value=displayText">*</button>
+                displayFunction(displayText)">*</button>
                 <button id="7" onclick="displayText=displayText+'7';
-                document.querySelector('#display').value=displayText">7</button>
+                displayFunction(displayText)">7</button>
                 <button id="8" onclick="displayText=displayText+'8';
-                document.querySelector('#display').value=displayText">8</button>
+                displayFunction(displayText)">8</button>
                 <button id="div" onclick="displayText=displayText+'/';
-                document.querySelector('#display').value=displayText">/</button>
+                displayFunction(displayText)">/</button>
                 <button id="equals" onclick=" let result=eval(displayText);
                 document.querySelector('#display').value=result;
                 ">=</button>
                 <button id="9" onclick="displayText=displayText+'9';
-                document.querySelector('#display').value=displayText">9</button>
+                displayFunction(displayText)">9</button>
                 <button id="0" onclick="displayText=displayText+'0';
-                document.querySelector('#display').value=displayText">0</button>
+                displayFunction(displayText)">0</button>
                 <button id="deci" onclick="displayText=displayText+'.';
-                document.querySelector('#display').value=displayText">.</button>
+                displayFunction(displayText)">.</button>
             </div>
         </div>
     </div>
-    <script>
-        let displayText = '';
-        document.querySelector('#display').value = displayText;
-    </script>
+    <script src="Calculator.js"></script>
 </body>
 
 </html>
