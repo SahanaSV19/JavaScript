@@ -1,1 +1,1 @@
-These are a couple of projects made using java script to make them functional.
+These are a couple of projects made using java script to make them functional/responsive.
