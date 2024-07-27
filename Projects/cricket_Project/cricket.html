@@ -17,73 +17,24 @@
     <div>
         <button onclick="
             let userChoice='bat';
-            generateComputerChoice()
-            let resultMsg;
-            if (computerChoice=='ball') {
-                resultMsg = 'User Won.';
-            }
-            else if (computerChoice=='bat')
-            {
-                resultMsg= `It's a tie.`;
-            }
-            else
-            {
-                resultMsg = 'Computer Won.'
-            }
-            alert(`You have chosen to Bat and computer has chosen to ${computerChoice} and ${resultMsg}`);
+            let compChoice = generateComputerChoice();
+            finalResult(userChoice, compChoice, resultMsg)
             ">Bat</button>
 
         <button onclick="
         userChoice='ball';
-        generateComputerChoice()
-        if (computerChoice=='stump') {
-            resultMsg = 'User Won.';
-        }
-        else if (computerChoice=='ball')
-        {
-            resultMsg= `It's a tie.`;
-        }
-        else
-        {
-            resultMsg = 'Computer Won.'
-        }
-        alert(`You have chosen to Ball and computer has chosen to ${computerChoice} and ${resultMsg}`);
+        compChoice =generateComputerChoice()
+        finalResult(userChoice, compChoice, resultMsg);
         ">Ball</button>
 
         <button onclick="
         userChoice='stump';
-        generateComputerChoice()
-        if (computerChoice=='bat') {
-            resultMsg = 'User Won.';
-        }
-        else if (computerChoice=='stump')
-        {
-            resultMsg= `It's a tie.`;
-        }
-        else
-        {
-            resultMsg = 'Computer Won.'
-        }
-        alert(`You have chosen to stump and computer has chosen to ${computerChoice} and ${resultMsg}`);
+        compChoice=generateComputerChoice();
+        finalResult(userChoice, compChoice, resultMsg);
         ">Stump</button>
     </div>
 
-    <script>
-        let computerChoice;
-        function generateComputerChoice() {
-            let randomNumber = Math.random() * 3;
-            if (randomNumber >= 0 && randomNumber <= 1) {
-                computerChoice = 'bat';
-            }
-            else if (randomNumber > 1 && randomNumber <= 2) {
-                computerChoice = 'ball';
-            }
-            else {
-                computerChoice = 'stump';
-            }
-
-        }
-    </script>
+    <script src="cricket.js"></script>
 </body>
 
 </html>
