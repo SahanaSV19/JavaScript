@@ -4,6 +4,9 @@ let score = {
     win: 0,
     lost: 0,
     tie: 0,
+    displayResult: function () {
+        return `No of matches Won:${this.win}, Lost:${this.lost}, Tie:${this.tie}`;
+    },
 };
 function generateComputerChoice() {
     let randomNumber = Math.random() * 3;
@@ -52,5 +55,5 @@ function finalResult(userChoice, compChoice, resultMsg) {
      
     ${resultMsg}
      
-    Won:${score.win}, Lost:${score.lost}, Tie:${score.tie}`);
+    ${score.displayResult()}`);
 }
