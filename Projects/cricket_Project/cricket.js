@@ -1,13 +1,21 @@
 let computerChoice;
 let resultMsg;
-let score = {
-    win: 0,
-    lost: 0,
-    tie: 0,
-    displayResult: function () {
+let score;
+let scoreStr = localStorage.getItem('Score');
+resetStore(scoreStr);
+
+function resetStore(scoreStr) {
+    // if there's a score existing in localstorage then 'score' will be updated according to scoreStr and if score is not existing then 'score' will be updated with null values.
+    score = JSON.parse(scoreStr) || {
+        win: 0,
+        lost: 0,
+        tie: 0,
+    };
+
+    score.displayResult = function () {
         return `No of matches Won:${this.win}, Lost:${this.lost}, Tie:${this.tie}`;
-    },
-};
+    };
+}
 function generateComputerChoice() {
     let randomNumber = Math.random() * 3;
     if (randomNumber >= 0 && randomNumber <= 1) {
@@ -51,6 +59,11 @@ function finalResult(userChoice, compChoice, resultMsg) {
         resultMsg = 'computer won';
         score.lost++;
     }
+    showResult(userChoice, compChoice, resultMsg, score);
+}
+
+function showResult(userChoice, compChoice, resultMsg, score) {
+    localStorage.setItem('Score', JSON.stringify(score));
     alert(`You have chosen to ${userChoice} and computer has chosen to ${compChoice} and
      
     ${resultMsg}

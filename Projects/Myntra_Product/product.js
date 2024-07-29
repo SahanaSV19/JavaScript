@@ -27,7 +27,7 @@ Container.innerHTML =
     ` <img class="item-image" src="${obj1.itemImage}" alt="item image" height="60%";>
     <div class="company-name">${obj1.companyName}</div>
     <div class="item-description">${obj1.description}</div>
-    <div class="final-Price">Rs ${obj1.finalPrice}</div>
-    <div class="delivery-Date">${obj1[deliveryDate]}</div>
+    <div class="final-Price">Rs. ${obj1.finalPrice}</div>
+    <div class="delivery-Date">${obj1['deliveryDate']}</div>
     `;
 
