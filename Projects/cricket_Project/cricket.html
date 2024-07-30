@@ -4,37 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="cricket.css">
     <title>Cricket</title>
 </head>
 
 <body>
     <h1>BAT BALL STUMP GAME</h1>
     <div>
-        <button onclick="
+
+        <button class="choice-button" onclick="
             let userChoice='bat';
             let compChoice = generateComputerChoice();
-            finalResult(userChoice, compChoice, resultMsg)
-            ">Bat</button>
+            finalResult(userChoice, compChoice)
+            "><img src="images/bat.png" alt="Bat Image" class="choice-image"></button>
 
-        <button onclick="
+        <button class="choice-button" onclick="
         userChoice='ball';
         compChoice =generateComputerChoice()
-        finalResult(userChoice, compChoice, resultMsg);
-        ">Ball</button>
+        finalResult(userChoice, compChoice);
+        "><img src="images/ball.png" alt="Ball Image" class="choice-image"></button>
 
-        <button onclick="
+        <button class="choice-button" onclick="
         userChoice='stump';
         compChoice=generateComputerChoice();
-        finalResult(userChoice, compChoice, resultMsg);
-        ">Stump</button>
-
+        finalResult(userChoice, compChoice);
+        "><img src="images/stump.png" alt="Stump Image" class="choice-image"></button>
         <br>
-        <button onclick=" localStorage.clear();resetStore(scoreStr);">Reset</button>
+        <h3 id="user-move"></h3>
+        <h3 id="computer-move"></h3>
+        <h3 id="result"></h3>
+        <h3 id="score-display"></h3>
+        <button onclick=" localStorage.clear();resetStore();">Reset ⟳
+        </button>
+        <div id="btm-container">
+        </div>
     </div>
 
     <script src="cricket.js"></script>
