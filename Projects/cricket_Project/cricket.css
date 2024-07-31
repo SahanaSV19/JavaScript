@@ -2,6 +2,18 @@ body {
     text-align: center;
 }
 
+.js-celebration {
+    background-image: url(images/celebration.gif);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.js-noCelebration {
+    background-image: none;
+}
+
 .choice-button {
     height: 100px;
     width: 100px;

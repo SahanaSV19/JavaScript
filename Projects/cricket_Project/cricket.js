@@ -70,21 +70,22 @@ function showResult(userChoice, compChoice, resultMsg) {
         compChoice ? `computer has chosen to ${compChoice}` : '';
     document.querySelector('#result').innerText =
         resultMsg ? resultMsg : '';
-    bottomCont(score.win, score.lost);
+
     document.querySelector('#score-display').innerText =
         score.displayResult();
+    bottomCont(score.win, score.lost);
 }
-// alert(`You have chosen to ${userChoice} and computer has chosen to ${compChoice} and
 
-// ${resultMsg}
-
-// ${score.displayResult()}`);
 
 function bottomCont(wins, loss) {
+    let container1 = document.querySelector('#container');
     if (wins % 5 == 0 && wins != 0 && wins > loss) {
-        document.querySelector('#btm-container').innerHTML = `<img src="images/celebration.gif" alt="celebration Image" class="celebrate-image">`
+        container1.classList.remove('js-noCelebration');
+        container1.classList.add('js-celebration');
+
     }
     else {
-        document.querySelector('#btm-container').innerHTML = ``;
+        container1.classList.remove('js-celebration');
+        container1.classList.add('js-noCelebration');
     }
 }
