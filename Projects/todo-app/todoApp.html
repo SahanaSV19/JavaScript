@@ -10,10 +10,12 @@
 
 <body>
     <h1 id="main-heading">TO-DO App</h1>
-    <input type="text" id="todo-input" placeholder="Enter ToDo here">
-    <button onclick="addTodo();">Add</button>
-
-    <div class="todo-container"></div>
+    <div class="grid-container">
+        <input type="text" id="todo-input" placeholder="Enter ToDo here">
+        <input type="date" id="todo-date">
+        <button class="btn-todo btn" onclick="addTodo();">Add</button>
+    </div>
+    <div class="todo-container grid-container"></div>
 
     <script src="todoApp.js"></script>
 </body>

@@ -5,9 +5,12 @@ displayItems()
 
 function addTodo() {
     let inputElement = document.querySelector('#todo-input');
+    let dateElement = document.querySelector('#todo-date');
     let todoItem = inputElement.value;
-    todoList.push(todoItem);
+    let todoDate = dateElement.value;
+    todoList.push({ item: todoItem, dueDate: todoDate });
     inputElement.value = "";
+    dateElement.value = "";
     storage()
 
 }
@@ -22,10 +25,14 @@ function displayItems() {
     let newHtml = '';
 
     for (let i = 0; i < todoList.length; i++) {
-        newHtml += `<div>
-        <span>${todoList[i]}</span>
-        <button onclick="todoList.splice('${i}',1); storage()">Delete</button>
-        </div>`
+        // let item = todoList[i].item;
+        // let dueDate = todoList[i].dueDate;
+        let { item, dueDate } = todoList[i];
+        newHtml += `
+        <span>${item}</span>
+        <span>${dueDate}</span>
+        <button class="btn-delete btn" onclick="todoList.splice('${i}',1); storage()">Delete</button>
+        `
 
     }
     containerElement.innerHTML = newHtml;
